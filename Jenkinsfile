@@ -7,7 +7,7 @@ pipeline {
             steps {
                 echo 'Testing..'
 		sh 'apt install npm -y'
-		sh 'npm install -g typescript'
+		sh 'npm install -g typescript -y'
          	sh 'npm test'
             }
         } 
