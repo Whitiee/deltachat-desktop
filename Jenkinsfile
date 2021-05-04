@@ -5,7 +5,6 @@ pipeline {
     
         stage('Install dependencies') {
             steps {
-            	export PATH=/usr/local/bin
            	sh 'npm install'
             }
         }
