@@ -27,8 +27,8 @@ pipeline {
         }
         failure {
             echo 'I failed :('
-            attachLog: true,
-            mail to: 'juliafajer69@gmail.com',
+            emailext attachLog: true,
+            to: 'juliafajer69@gmail.com',
             subject: "Failed test Pipeline: ${currentBuild.fullDisplayName}",
             body: "Something is wrong with ${env.BUILD_URL}"
         }
