@@ -7,8 +7,11 @@ pipeline {
             steps {
                 echo 'Testing..'
 		sh 'apt install npm -y'
-		sh 'npm install -g typescript -y'
-         	sh 'npm test'
+                sh 'npm i npm@latest -g'
+                sh 'npm fund'
+                sh 'npm install'
+                sh 'npm run build'
+		sh 'npm run test'
             }
         } 
     }
