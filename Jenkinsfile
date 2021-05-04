@@ -6,8 +6,8 @@ pipeline {
         stage('Test') {
             steps {
                 echo 'Testing..'
-		sh 'whoami'
 		sh 'apt install npm -y'
+		sh 'npm install -g typescript'
          	sh 'npm test'
             }
         } 
