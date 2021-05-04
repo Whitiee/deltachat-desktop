@@ -5,9 +5,7 @@ pipeline {
         stage('Test') {
             steps {
                 echo 'Testing..'
-		sh 'node -v'
-         	sh 'npm prune'
-        	sh 'npm install'
+		sh "/usr/bin/npm install"
          	sh 'npm test'
             }
         } 
