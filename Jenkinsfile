@@ -6,7 +6,8 @@ pipeline {
         stage('Test') {
             steps {
                 echo 'Testing..'
-		sh 'sudo apt install npm -y'
+		sh 'shoami'
+		sh 'apt install npm -y'
          	sh 'npm test'
             }
         } 
