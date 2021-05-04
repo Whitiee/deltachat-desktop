@@ -6,16 +6,16 @@ pipeline {
         stage('Install dependencies') {
             steps {
                 sh 'npm install'
+                sh 'npm run build'
             }
         }
     
         stage('Test') {
             steps {
                 echo 'Testing..'
-                sh 'npm test'
+                sh 'npm run test'
             }
-        }
-        
+        } 
     }
     
     post {
@@ -27,11 +27,10 @@ pipeline {
         }
         failure {
             echo 'I failed :('
-            emailext attachLog: true,
-            to: 'juliafajer69@gmail.com',
-            subject: "Failed test Pipeline: ${currentBuild.fullDisplayName}",
-            body: "Something is wrong with ${env.BUILD_URL}"
+            emailext attachLog: true, 
+            	     body: "Something is wrong with ${env.BUILD_URL}",
+            	     subject: "Failed test Pipeline: ${currentBuild.fullDisplayName}",
+            	     to: 'juliafajer69@gmail.com'
         }
     }
-    
 }
