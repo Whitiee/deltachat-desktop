@@ -3,14 +3,18 @@ pipeline {
 	agent any
 
     stages {
-        stage('Test') {
+	     stage('Build') {
             steps {
-                echo 'Testing..'
+                echo 'Build..'
 		sh 'apt install npm -y'
                 sh 'npm i npm@latest -g'
                 sh 'npm fund'
                 sh 'npm install'
                 sh 'npm run build'
+            }
+        stage('Test') {
+            steps {
+                echo 'Testing..'
 		sh 'npm run test'
             }
         } 
