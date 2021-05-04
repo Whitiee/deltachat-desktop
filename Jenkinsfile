@@ -1,13 +1,14 @@
 pipeline {
     agent any
 
-    tools {nodejs "nodejs"}
-	
     stages {
     
         stage('Install dependencies') {
             steps {
            	echo 'Starting pipeline..'
+		nodejs(nodeJSInstallationName: 'Node 6.x', configId: '<config-file-provider-id>') {
+                sh 'npm config ls'
+                }
             }
         }
     
