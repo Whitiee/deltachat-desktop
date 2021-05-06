@@ -1,17 +1,14 @@
 pipeline {
-
 	agent any
+	tools {
+		nodejs "node"
+	}
 
     stages {
 	     stage('Build') {
             steps {
                 echo 'Build..'
-		sh 'apt install npm -y'
-                sh 'npm i npm@latest -g'
-                sh 'npm fund'
-		sh 'npm config set prefix "~/.npm-global"'
-		sh 'export PATH=~/.npm-global/bin:$PATH'
-                sh 'npm install -g jshint'
+		sh 'npm install'
             }
 	  }
         stage('Test') {
