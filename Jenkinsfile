@@ -7,6 +7,7 @@ pipeline {
             steps {
                 echo 'Build..'
 		sh 'apt install npm -y'
+		sh 'apt install source -y'
                 sh 'npm i npm@latest -g'
                 sh 'npm fund'
 		sh 'mkdir ~/.npm-global'
