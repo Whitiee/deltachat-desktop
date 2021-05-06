@@ -11,7 +11,6 @@ pipeline {
                 sh 'npm fund'
 		sh 'npm config set prefix "~/.npm-global"'
 		sh 'export PATH=~/.npm-global/bin:$PATH'
-		sh './.profile'
                 sh 'npm install -g jshint'
             }
 	  }
