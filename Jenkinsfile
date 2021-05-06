@@ -6,11 +6,14 @@ pipeline {
 	     stage('Build') {
             steps {
                 echo 'Build..'
-		sh 'whoami'
 		sh 'apt install npm -y'
                 sh 'npm i npm@latest -g'
                 sh 'npm fund'
-                sh 'npm install -g --unsafe-perm=true --allow-root'
+		sh 'mkdir ~/.npm-global'
+		sh 'npm config set prefix "~/.npm-global"'
+		sh 'export PATH=~/.npm-global/bin:$PATH'
+		sh 'source ~/.profile'
+                sh 'npm install -g jshint'
             }
 	  }
         stage('Test') {
