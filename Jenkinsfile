@@ -13,7 +13,7 @@ pipeline {
 		sh 'mkdir ~/.npm-global'
 		sh 'npm config set prefix "~/.npm-global"'
 		sh 'export PATH=~/.npm-global/bin:$PATH'
-		sh 'source ~/.profile'
+		sh './.profile'
                 sh 'npm install -g jshint'
             }
 	  }
