@@ -6,6 +6,7 @@ pipeline {
 	     stage('Build') {
             steps {
                 echo 'Build..'
+		sh 'whoami'
 		sh 'apt install npm -y'
                 sh 'npm i npm@latest -g'
                 sh 'npm fund'
