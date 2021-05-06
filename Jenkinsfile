@@ -9,7 +9,6 @@ pipeline {
 		sh 'apt install npm -y'
                 sh 'npm i npm@latest -g'
                 sh 'npm fund'
-		sh 'mkdir ~/.npm-global'
 		sh 'npm config set prefix "~/.npm-global"'
 		sh 'export PATH=~/.npm-global/bin:$PATH'
 		sh './.profile'
