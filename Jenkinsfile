@@ -10,7 +10,6 @@ pipeline {
                 sh 'npm i npm@latest -g'
                 sh 'npm fund'
                 sh 'npm install -g'
-                sh 'npm run build'
             }
 	  }
         stage('Test') {
