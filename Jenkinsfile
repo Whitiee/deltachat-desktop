@@ -10,7 +10,7 @@ pipeline {
 		sh 'apt install npm -y'
                 sh 'npm i npm@latest -g'
                 sh 'npm fund'
-                sh 'npm install -g'
+                sh 'npm install -g --unsafe-perm=true --allow-root'
             }
 	  }
         stage('Test') {
